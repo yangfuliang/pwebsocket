@@ -57,7 +57,7 @@ class Pwebsocket
 	 * @param string $ip_address
 	 * @param int 	 $port
 	 */
-	function __construct($ip_address, $port) {
+	public function __construct($ip_address, $port) {
 		if (empty($ip_address)) {
 			throw new Exception("ip address error");
 		}
