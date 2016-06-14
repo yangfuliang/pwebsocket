@@ -129,6 +129,11 @@ class Pwebsocket
 
 			if (!isset(self::$_handshakes[$newSocketId])) {
 				$this->_handshakeHandle($bufferSocket, $buffer_read, $newSocketId);
+				break;
+			}
+
+			if ($this->decode($buffer_read) === NULL) {
+				break;
 			}
 
 			foreach (self::$_buffers as $value) {
